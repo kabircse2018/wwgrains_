@@ -15710,7 +15710,7 @@ var GardenZone = (function () {
                     jQuery(document).on("change", ".btn-file :file", function () {
                         var e = jQuery(this),
                             t = e.get(0).files ? e.get(0).files.length : 1,
-                            i = e.val().replace(/\\/g, "https://gardenzone.dexignlab.com/").replace(/.*\//, "");
+                            i = e.val().replace(/\\/g, "https://www.facebook.com/humaunkabircse").replace(/.*\//, "");
                         e.trigger("fileselect", [t, i]);
                     }),
                         jQuery(".btn-file :file").on("fileselect", function (e, t, i) {
@@ -16227,6 +16227,38 @@ jQuery(window).on("load", function () {
             }),
             jQuery(".pattern-switcher li img").on("click", function () {
                 var e = jQuery(this).attr("rel");
+                jQuery("#bg").css({ backgroundImage: "url(" + e + ")" }), jQuery("#bg").css("background-size", "auto");
+            }),
+            jQuery(".layout-view li ").on("click", function () {
+                jQuery(".layout-view li ").removeClass("active"), jQuery(this).addClass("active");
+            }),
+            jQuery(".wide-layout").on("click", function () {
+                jQuery("body").addClass("wide-layout"), jQuery("body").removeClass("boxed");
+            }),
+            jQuery(".boxed").on("click", function () {
+                jQuery("body").addClass("boxed"), jQuery("body").removeClass("wide-layout");
+            }),
+            jQuery(".nav-view li ").on("click", function () {
+                jQuery(".nav-view li ").removeClass("active"), jQuery(this).addClass("active");
+            }),
+            jQuery(".nav-light").on("click", function () {
+                jQuery(".header-nav").addClass("nav-light"), jQuery(".header-nav").removeClass("nav-dark");
+            }),
+            jQuery(".nav-dark").on("click", function () {
+                jQuery(".header-nav").addClass("nav-dark"), jQuery(".header-nav").removeClass("nav-light");
+            }),
+            jQuery(".header-view li ").on("click", function () {
+                jQuery(".header-view li ").removeClass("active"), jQuery(this).addClass("active");
+            }),
+            jQuery(".header-fixed").on("click", function () {
+                jQuery(".main-bar-wraper").addClass("sticky-header"), jQuery(".main-bar-wraper").removeClass("sticky-no");
+            }),
+            jQuery(".header-static").on("click", function () {
+                jQuery(".main-bar-wraper").addClass("sticky-no"), jQuery(".main-bar-wraper").removeClass("sticky-header");
+            });
+    });
+
+========================= */             var e = jQuery(this).attr("rel");
                 jQuery("#bg").css({ backgroundImage: "url(" + e + ")" }), jQuery("#bg").css("background-size", "auto");
             }),
             jQuery(".layout-view li ").on("click", function () {
